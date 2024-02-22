@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   // State to hold the list of products
@@ -6,7 +7,13 @@ const Home = () => {
 
   // State to hold the search term entered by the user
   const [searchTerm, setSearchTerm] = useState("");
-
+const navigate = useNavigate();
+  useEffect(() => {
+    let username = sessionStorage.getItem("username");
+    if (username === "" || username === null) {
+        navigate('/login');
+    }
+  }, []);
   // Fetch products from the API when the component mounts
   useEffect(() => {
     // Fetch data from the API URL
