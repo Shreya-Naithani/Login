@@ -110,7 +110,7 @@ sessionStorage.clear();
             <div>
               <Link
                 className="py-2 px-4 bg-gray-500 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring focus:border-gray-300"
-                to={"/register"}
+                to={"/"}
               >
                 New User
               </Link>
