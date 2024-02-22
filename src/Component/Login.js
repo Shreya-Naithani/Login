@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { toast } from "react-toastify";
 import { Link , useNavigate } from "react-router-dom";
 
@@ -6,7 +6,9 @@ import { Link , useNavigate } from "react-router-dom";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+ useEffect(()=>{
+sessionStorage.clear();
+  },[])
   //   const handleLogin = () => {
   //     // Add your login logic here
   //     console.log("Username:", username);
@@ -26,7 +28,8 @@ const Login = () => {
           
           if (resp[0].name===username && resp[0].pass ===password) {
             toast.success('login successfully');
-              navigate("/home");
+            sessionStorage.setItem('username',username);
+            navigate("/User");
             } else {
               toast.error("Please Enter valid credential");
             }
