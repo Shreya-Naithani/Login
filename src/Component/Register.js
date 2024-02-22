@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 
 const Register = () => {
   // const[id ,setId]=useState('');
@@ -128,9 +128,9 @@ const Register = () => {
           >
             Register
           </button>
-          {/* <button className="bg-red-500  text-white p-2 rounded-md hover:bg-red-600 focus:outline-none focus:shadow-outline-red active:bg-red-800 cursor-pointer hover:scale-105">
-            Back
-          </button> */}
+           <Link to={'/login'} className="bg-red-500  text-white p-2 rounded-md hover:bg-red-600 focus:outline-none focus:shadow-outline-red active:bg-red-800 cursor-pointer hover:scale-105">
+            Login
+          </Link> 
         </form>
       </div>
     </div>
